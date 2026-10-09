@@ -16,11 +16,8 @@ import MuseScore 3.0
 
 MuseScore {
       menuPath: 'Plugins.TempoStretch'
-      title: 'TempoStretch'
       version: '4.0.0'
       description: qsTr("Apply a % change to (selected) tempo markers")
-      thumbnailName: 'TempoStretch.png'
-      categoryCode: 'tools'
       pluginType: 'dialog'
       requiresScore: true
       id: 'pluginId'
@@ -28,7 +25,7 @@ MuseScore {
       property int startBPMvalue: 120 // Always as 1/4th == this value
       property int beatBaseIndex: 5
       property var beatBaseList: [
-            //mult is a tempo-multiplier compared to a crotchet      
+            //mult is a tempo-multiplier compared to a crotchet
             //{ text: '\uECA0'              , mult: 8     , sym: '<sym>metNoteDoubleWhole</sym>' } // 2/1
              { text: '\uECA2'              , mult: 4     , sym: '<sym>metNoteWhole</sym>' } // 1/1
             //,{ text: '\uECA3\uECB7\uECB7' , mult: 3.5   , sym: '<sym>metNoteHalfUp</sym><sym>metAugmentationDot</sym><sym>metAugmentationDot</sym>' } // 1/2..
@@ -45,7 +42,7 @@ MuseScore {
             ,{ text: '\uECA9'              , mult: 0.25  , sym: '<sym>metNote16thUp</sym>' } //1/16
       ]
 
-      width:  240
+      width:  300
       height: 160
 
       onRun: {
@@ -282,7 +279,7 @@ MuseScore {
                   anchors.rightMargin: 10
                   anchors.topMargin: 5
                   anchors.bottomMargin: 5
-                                    
+
                   Label {
                         text: qsTr("From:")
                         Layout.alignment: Qt.AlignRight
@@ -290,8 +287,8 @@ MuseScore {
                   Label {
                         id: startTempoTxt
                         Layout.fillWidth: true
-                        bottomPadding: -10
-                        font.pointSize: 9
+                        // bottomPadding: -10
+                        // font.pointSize: 9
                   }
 
                   Label {
